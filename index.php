@@ -16,9 +16,9 @@ require_once 'app/app.php';
     <!-- <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=edge"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?php
-    if (isset($pageName)):
+    if (isset($page)):
     ?>
-        <title><?= $pageName; ?></title>
+        <title><?= ucfirst($page); ?></title>
 
     <?php else: ?>
         <title>No title</title>
@@ -41,6 +41,7 @@ require_once 'app/app.php';
 
 <div class="row">
     <div class="container">
+        <?php require_once "inc/$page.php"; ?>
     </div>
 </div>
 
