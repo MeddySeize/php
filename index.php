@@ -58,6 +58,20 @@ require_once 'app/app.php';
     </div>
 </aside>
 
+<?php if (!empty($error)): ?>
+    
+    <section class="container">
+        <?php foreach ($error as $key => $value): ?>
+            <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <?= $value; ?>
+            </div>
+        <?php endforeach ?>
+    </section>
+    <?php $error = []; ?>
+<?php endif ?>
+
 <main class="row">
     <div class="container">
         <?php require_once "inc/$page.php"; ?>
