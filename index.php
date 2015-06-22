@@ -1,5 +1,5 @@
 <?php
-
+    
 require_once 'config/contents.php';
 require_once 'config/users.php';
 require_once 'app/app.php';
@@ -27,7 +27,7 @@ require_once 'app/app.php';
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, user-scalable = yes">
 
-    <link rel="stylesheet" href="web/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../web/css/bootstrap.min.css">
 
     <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
     <!-- Importing jquery in case there are jq scripts in the middle of the page -->
@@ -39,11 +39,30 @@ require_once 'app/app.php';
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-<div class="row">
+<aside class="row">
+    <div class="container">
+        <div class="jumbotron">
+            <div class="">
+                <?php if(isset($page)): ?>
+                    <h1><?= ucfirst($page); ?></h1>
+                <?php endif; ?>
+            </div>
+            <div class="pull-right">
+                <?php if(isset($_SESSION['is_connected']) && $_SESSION['is_connected']): ?>
+                    <a href="logout" class="btn btn-danger">Logout</a>
+                <?php else: ?>
+                    <a href="login" class="btn btn-primary">Login</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<main class="row">
     <div class="container">
         <?php require_once "inc/$page.php"; ?>
     </div>
-</div>
+</main>
 
     <!-- Js section -->
     <!-- <script src="js/dist/all.js"></script> -->
