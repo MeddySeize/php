@@ -1,7 +1,5 @@
 <?php
-    
-require_once 'config/contents.php';
-require_once 'config/users.php';
+
 require_once 'app/app.php';
 
 ?>
@@ -49,7 +47,7 @@ require_once 'app/app.php';
             </div>
             <div class="pull-right">
                 <?php if(isset($_SESSION['is_connected']) && $_SESSION['is_connected']): ?>
-                    <a href="logout" class="btn btn-danger">Logout</a>
+                    Bonjour <?=  $_SESSION['nom']; ?> <a href="logout" class="btn btn-danger">Logout</a>
                 <?php else: ?>
                     <a href="login" class="btn btn-primary">Login</a>
                 <?php endif; ?>
@@ -57,6 +55,15 @@ require_once 'app/app.php';
         </div>
     </div>
 </aside>
+
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div><a href="accueil" class="navbar-brand">Mon Super site</a></div>
+        <ul class="nav navbar-nav">
+            <li><a href="membre">Membre</a></li>
+        </ul>
+    </nav>
+</div>
 
 <?php if (!empty($error)): ?>
     
