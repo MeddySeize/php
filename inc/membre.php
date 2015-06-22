@@ -1,6 +1,6 @@
 <?php foreach ($contents as $key => $value): ?>
 
-<div class="container">
+<div class="">
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="panel-title" style="overflow:auto;">
